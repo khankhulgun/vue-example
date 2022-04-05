@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Hun ref="Zundui" ovog="Mendug"></Hun>
+    <Hun ref="Oyuka" :ovog="`Bayarsaikhan`"></Hun>
+
+    <button @click="changeZ">Change Zundui</button>
+    <button @click="changeO">Change Oyuka</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Hun from "./components/hun"
 
 export default {
   name: 'App',
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    changeZ(){
+      this.$refs.Zundui.changeMyName("Mr Z")
+    },
+    changeO(){
+      this.$refs.Oyuka.changeMyName("Miss O")
+    },
+  },
+
+  computed: {
+
+  },
+  watch: {
+
+  },
   components: {
-    HelloWorld
+    Hun
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
